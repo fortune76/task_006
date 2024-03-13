@@ -28,5 +28,15 @@ def test_cafe_5():
     assert result.returncode == 0
     assert result.stdout == 'UNKNOWN COMMAND\n'
 
+def test_cafe_6():
+    result = run([B_FILE_PATH], input='ORDER pizza chips burger 1500 cola 100 cola 100 whiskey 400 KITCHEN BAR STATS', encoding='utf-8', stdout=PIPE)
+    assert result.returncode == 0
+    assert result.stdout == 'pizza chips burger\ncola cola whiskey\nKITCHEN 1 1500\nBAR 1 600\n'
+
+def test_cafe_7():
+    result = run([B_FILE_PATH], input='ORDER pizza 1500 cola 100 ORDER pizza 500 water 0 ORDER pizza 500 cola 500 KITCHEN KITCHEN KITCHEN BAR BAR BAR STATS', encoding='utf-8', stdout=PIPE)
+    assert result.returncode == 0
+    assert result.stdout == 'pizza\npizza\npizza\ncola\nwater\ncola\nKITCHEN 3 2500\nBAR 3 600\n'
+
 if __name__ == "__main__":
     pytest.main()
