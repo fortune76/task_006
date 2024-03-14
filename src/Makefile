@@ -1,8 +1,8 @@
 GC=gcc
 FLAGS=-Wall -Wextra -Werror
 BIN=../bin/
-AIR_TRAFFIC=air_traffic/
-CAFE=cafe/
+AIR_TRAFFIC=air_traffic_task/
+CAFE=cafe_task/
 
 all: air_traffic cafe
 
