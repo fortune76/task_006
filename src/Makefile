@@ -1,5 +1,5 @@
 GC=gcc
-FLAGS=
+FLAGS=-Wall -Wextra -Werror
 BIN=../bin/
 AIR_TRAFFIC=air_traffic/
 CAFE=cafe/
