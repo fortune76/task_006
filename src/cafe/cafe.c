@@ -99,15 +99,15 @@ struct Queue *new_bar_order(struct Queue *bar_queue, char *bar_order) {
 }
 
 void normalize_str(char *str) {
-    int len = strlen(str);
+    int len_str = strlen(str);
     char tmp_str[MAX_LEN_STR] = {0};
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < len_str; i++) {
         if (str[i] == '\n') {
             break;
         }
         tmp_str[i] = str[i];
     }
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < len_str; i++) {
         str[i] = 0;
     }
     strcpy(str, tmp_str);

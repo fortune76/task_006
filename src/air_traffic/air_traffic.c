@@ -26,7 +26,7 @@ int check_traffic(int low, int high, int aircrafts) {
 }
 
 void output(int mode) {
-    if (mode == 0) {
+    if (!mode) {
         printf("DANGEROUS\a");
     } else {
         printf("SAFELY");
